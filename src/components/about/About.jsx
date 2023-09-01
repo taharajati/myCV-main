@@ -21,7 +21,7 @@ const About = () => {
 
         <div className='about__content'>
         <p>Computer engineering student at Islamic azad university karaj.
-          Front End DEveloper working with javaScript, HTML/CSS,React to deliver exceptional custumer experiences.
+          Front End Developer working with javaScript, HTML/CSS,React to deliver exceptional custumer experiences.
           Adept at contributing to a highly collaborative work enviroment , finding solutions,and determining customer satisfaction.
            </p>
 
