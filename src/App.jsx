@@ -8,6 +8,7 @@ import Footer from './components/footer/Footer'
 
 
 import './style.css'
+import Experience from './components/experience/Experience'
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
        <About/>
        <Nav/>
        <Skill/>
+       <Experience/>
        <Contact/>
        <Footer/>
        

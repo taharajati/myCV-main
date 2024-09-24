@@ -6,7 +6,7 @@ const Skill = () => {
   return (
     <section id='skill'>
       <h5>What Skills I Have</h5>
-      <h2>My Experience</h2>
+      <h2>My Skills</h2>
 
       <div className="container experience__container">
         <div className="experience__frontend">
@@ -16,31 +16,31 @@ const Skill = () => {
             <article className='experience_details'>
                <AiOutlineCheckCircle/>
                <h4>HTML</h4>
-               <small className='text-light'>Experienced</small>
+               <small className='text-white'>Experienced</small>
                
             </article>
             <article className='experience_details'>
                <AiOutlineCheckCircle/>
                <h4>CSS</h4>
-               <small className='text-light'>Experienced</small>
+               <small className='text-white'>Experienced</small>
                
             </article>
             <article className='experience_details'>
                <AiOutlineCheckCircle/>
                <h4>JavaScript</h4>
-               <small className='text-light'>Intermediate</small>
+               <small className='text-white'>Experienced</small>
                
             </article>
             <article className='experience_details'>
                <AiOutlineCheckCircle/>
                <h4>Tailwind</h4>
-               <small className='text-light'>Intermediate</small>
+               <small className='text-white'>Experienced</small>
                
             </article>
             <article className='experience_details'>
                <AiOutlineCheckCircle/>
                <h4>React</h4>
-               <small className='text-light'>Intermediate</small>
+               <small className='text-white'>Experienced</small>
                
             </article>
             
