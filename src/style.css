@@ -12,12 +12,13 @@
 }
 
 :root {
-    --color-bg: #ebfffc;
-    --color-bg-variant: #b4dbea;
-    --color-primary: #42788e;
-    --color-primary-variant: #42788e;
-    --color-white: #223a43  ;
-    --color-light: #525252;
+--color-bg: #d4e9e1; /* پس‌زمینه سبز ملایم، اما تیره‌تر */
+--color-bg-variant: #9ac5b6; /* پس‌زمینه سبز تیره‌تر، اما هنوز نرم و خوشایند */
+--color-primary: #2e6b56; /* سبز تیره و غنی برای حس حرفه‌ای و جدی‌تر */
+--color-primary-variant: #1e4a39; /* سبز تیره‌تر برای کنتراست بیشتر */
+--color-white: #4e5151; /* سفید خاکی برای تنوع بیشتر در روشنایی */
+--color-light: #404d47; /* خاکی تیره‌تر، برای متن‌ها و بخش‌های روشن‌تر */
+
 
     --transition: all 400ms ease ;
 

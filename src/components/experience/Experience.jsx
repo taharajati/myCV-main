@@ -6,35 +6,43 @@ import { AiOutlineCheckCircle } from 'react-icons/ai';
 import ExampleImage from '../../assets/1.jpg';
 import ExampleImage01 from '../../assets/2.jpg';
 import ExampleImage02 from '../../assets/3.png';
+import ExampleImage03 from '../../assets/4.png';
 
 const Experience = () => {
   return (
-    <section id='experience'>
+    <section id='Experience'>
       <h5>My Journey</h5>
       <h2>Professional Experiences</h2>
 
       <div className="container experience__container">
         <div className="experience__item">
           <img src={ExampleImage} alt="Project Screenshot" className="experience__image" />
-            <h3>Designing and building a fully responsive E-commerce using React</h3>
+            <h3>Developed a Fully Responsive E-commerce Website Using React</h3>
           <div className="experience__content">
             
           </div>
         </div>
         <div className="experience__item">
           <img src={ExampleImage01} alt="Project Screenshot" className="experience__image" />
-            <h3>Corona diagnosis website based on X-ray with react and python</h3>
+            <h3>Developed a Corona Diagnosis Website Based on X-ray Using React and Python</h3>
           <div className="experience__content">
             
           </div>
         </div>
         <div className="experience__item">
           <img src={ExampleImage02} alt="Project Screenshot" className="experience__image" />
-            <h3>reactjs طراحی و ساخت وبسایت حسابرسی شعب بیمه به کمک</h3>
+            <h3>Developed a React-Based Audit Website for Insurance Branches</h3>
           <div className="experience__content">
             
           </div>
         </div>
+        <div className="experience__item">
+          <img src={ExampleImage03} alt="Project Screenshot" className="experience__image" />
+            <h3>Developed a Stock Market Website Using React</h3>
+          <div className="experience__content">
+            
+          </div>
+          </div>
 
    
       </div>
