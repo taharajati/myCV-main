@@ -1,24 +1,82 @@
 header {
     height: 100vh;
-    padding-top: 7rem;
+    padding-top: 4rem;
     overflow: hidden;
 }
 
 .header__container {
-    text-align: center;
     height: 100%;
+    text-align: center;
     position: relative;
-} 
-
-/*====================CTA===================*/
-.cta {
-    margin-top: 2.5rem;
     display: flex;
-    gap: 1.2rem;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
 }
 
-/*====================header socials===================*/
+/* Title Animations */
+.header__container h5 {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    opacity: 0;
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+.header__container h1 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    opacity: 0;
+    animation: fadeInUp 0.5s ease forwards 0.2s;
+}
+
+.header__container h5.text-light {
+    opacity: 0;
+    animation: fadeInUp 0.5s ease forwards 0.4s;
+}
+
+/* Profile Image Container */
+.me {
+    width: clamp(200px, 30vw, 300px);
+    aspect-ratio: 1;
+    position: relative;
+    margin: 2rem auto;
+    border-radius: 50%;
+    overflow: hidden;
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    background: linear-gradient(var(--color-primary), transparent);
+}
+
+.me img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.me:hover img {
+    transform: scale(1.1);
+}
+
+/* Call to Action */
+.cta {
+    display: flex;
+    gap: clamp(0.5rem, 2vw, 1.2rem);
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+/* Scroll Down */
+.scroll__down {
+    position: absolute;
+    right: -2.3rem;
+    bottom: 5rem;
+    transform: rotate(90deg);
+    font-weight: 300;
+    font-size: 0.9rem;
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards 1s;
+}
+
+/* Header Socials */
 .header__socials {
     display: flex;
     flex-direction: column;
@@ -26,56 +84,54 @@ header {
     gap: 0.8rem;
     position: absolute;
     left: 0;
-    bottom:3rem;
+    bottom: 3rem;
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards 0.8s;
 }
 
-
 .header__socials::after {
-    content: '';
+    content: "";
     width: 1px;
     height: 2rem;
     background: var(--color-primary);
 }
 
-/*====================me===================*/
-.me {
-    background: linear-gradient(var(--color-primary),transparent );
-     width: 16rem;
-     height: 19rem;
-     position: absolute;
-     left: calc(50% - 8rem);
-     margin-top: 4rem;
-     
-     overflow: hidden;
-     padding: 0rem 0rem 1rem 0rem;
-
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
-/*====================scroll sown===================*/
 
-.scroll__down{
-    position: absolute;
-    right: -2.3rem;
-    bottom: 5rem;
-    transform: rotate(90deg);
-    font-weight: 300;
-    font-size: 0.9rem;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
-/*================media queries (medium devices)===================*/
 
+/* Media Queries */
 @media screen and (max-width: 1024px) {
-      header {
-        height: 68vh;
+    header {
+        height: auto;
+        min-height: 100vh;
+    }
 
-      }
-     
+    .me {
+        width: clamp(180px, 25vw, 250px);
+    }
 }
-
-
-/*================media queries (small devices)===================*/
 
 @media screen and (max-width: 600px) {
-    header {
-        height: 100vh;
+    .header__container {
+        padding-top: 3rem;
     }
 
     .header__socials,
@@ -83,5 +139,32 @@ header {
         display: none;
     }
 
+    .me {
+        width: clamp(150px, 50vw, 200px);
+        margin: 1.5rem auto;
+    }
+
+    .cta {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+
+/* Landscape Mode */
+@media screen and (max-height: 600px) and (orientation: landscape) {
+    header {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .me {
+        width: 150px;
+        margin: 1rem auto;
+    }
+
+    .header__container {
+        gap: 1rem;
+    }
 }
 

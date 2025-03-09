@@ -1,80 +1,159 @@
 .experience__container {
-    
-    
     display: grid;
-    grid-template-columns: 1fr 1fr ;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    padding: 2rem 0;
 }
 
-
-.experience__container > div {
-     background: var(--color-bg-variant);
-     padding: 2.4rem 5rem;
-     border-radius: 2rem;
-     border: 1px solid transparent;
-     transition: var(--transition);
-     color: var(--color-white);
+.experience__frontend {
+    background: var(--color-bg-variant);
+    padding: 2.4rem;
+    border-radius: 2rem;
+    border: 1px solid transparent;
+    transition: all 400ms ease;
 }
 
-.experience__container > div:hover{
+.experience__frontend:hover {
     background: transparent;
     border-color: var(--color-primary-variant);
-    cursor: default;
+    cursor: pointer;
+    transform: translateY(-5px);
     
-
 }
 
-.experience__container > div h3 {
+.experience__frontend h3 {
     text-align: center;
     margin-bottom: 2rem;
-    color: var(--color-white);
+    color: var(--color-primary);
 }
-
 
 .experience__content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    row-gap: 6rem;
-    
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 2rem;
 }
 
-
-.experience__details {
+.experience_details {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 1rem;
-    
-    
+    padding: 1.2rem;
+    border-radius: 1rem;
+    background: var(--color-bg);
+    transition: all 300ms ease;
 }
 
+.experience_details:hover {
+    background: var(--color-bg-variant);
+    transform: translateY(-3px);
+}
 
+.experience_details:hover svg,
+.experience_details:hover h4,
+.experience_details:hover small {
+    color: var(--color-white);
+}
 
-/*================media queries (medium devices)===================*/
+.experience_details svg {
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    transition: color 300ms ease;
+}
 
+.experience_details h4 {
+    font-size: 1rem;
+    margin: 0;
+    transition: color 300ms ease;
+}
+
+.experience_details small {
+    font-size: 0.85rem;
+    opacity: 0.8;
+    transition: color 300ms ease;
+}
+
+/* Animation for skill items */
+.experience_details {
+    opacity: 0;
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply animation delay to each skill item */
+.experience_details:nth-child(1) { animation-delay: 0.1s; }
+.experience_details:nth-child(2) { animation-delay: 0.2s; }
+.experience_details:nth-child(3) { animation-delay: 0.3s; }
+.experience_details:nth-child(4) { animation-delay: 0.4s; }
+.experience_details:nth-child(5) { animation-delay: 0.5s; }
+.experience_details:nth-child(6) { animation-delay: 0.6s; }
+.experience_details:nth-child(7) { animation-delay: 0.7s; }
+.experience_details:nth-child(8) { animation-delay: 0.8s; }
+
+/* Media Queries */
 @media screen and (max-width: 1024px) {
     .experience__container {
-        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
-    .experience__container > div {
-        width: 80%;
+
+    .experience__frontend {
         padding: 2rem;
-        margin: 0 auto;
     }
- 
-   .experience__content {
-    padding: 1rem;
-   }
 }
-
-
-/*================media queries (small devices)===================*/
 
 @media screen and (max-width: 600px) {
     .experience__container {
         gap: 1rem;
     }
 
- .experience__container > div {
-    width: 100%;
-    padding: 2rem 1rem;
- }
+    .experience__content {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 1rem;
+    }
+
+    .experience__frontend {
+        padding: 1.5rem;
+    }
+
+    .experience_details {
+        padding: 1rem;
+    }
+
+    .experience_details svg {
+        font-size: 1.2rem;
+    }
+
+    .experience_details h4 {
+        font-size: 0.9rem;
+    }
+
+    .experience_details small {
+        font-size: 0.75rem;
+    }
+}
+
+/* Landscape Mode */
+@media screen and (max-height: 600px) and (orientation: landscape) {
+    .experience__container {
+        padding: 1rem 0;
+    }
+
+    .experience__frontend {
+        padding: 1.5rem;
+    }
+
+    .experience__content {
+        gap: 1rem;
+    }
 }

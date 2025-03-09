@@ -1,80 +1,91 @@
 .experience__container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    padding: 2rem 0;
 }
 
 .experience__item {
     background: var(--color-bg-variant);
-    padding: 2.4rem;
+    padding: 2rem;
     border-radius: 2rem;
     border: 1px solid transparent;
-    transition: var(--transition);
-    color: var(--color-white);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
+    transition: all 400ms ease;
 }
 
 .experience__item:hover {
-    background: transparent;
     border-color: var(--color-primary-variant);
-    cursor: default;
+    background: transparent;
+    transform: translateY(-5px);
 }
 
-.experience__image {
-    width: 100%;
-    height: auto;
-    max-width: 300px;
-    border-radius: 1rem;
-}
-
-.experience__content {
-    text-align: center;
-    
-}
-
-.experience__content h3 {
-    margin-bottom: 1rem;
-    color: var(--color-white);
-}
-
-.experience_details {
+.experience__item-header {
     display: flex;
     align-items: center;
     gap: 1rem;
+    margin-bottom: 1rem;
 }
 
-.experience_details h4 {
-    margin: 0;
-    color: var(--color-white);
+.experience__icon {
+    font-size: 2rem;
+    color: var(--color-primary);
 }
 
-.text-light {
-    color: #ccc;
+.experience__item h3 {
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
 }
 
-/*================media queries (medium devices)===================*/
+.experience__role {
+    color: var(--color-light);
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+}
 
+.experience__description {
+    color: var(--color-light);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.experience__tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.tech-tag {
+    background: var(--color-primary);
+    color: var(--color-bg);
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: all 300ms ease;
+}
+
+.tech-tag:hover {
+    background: var(--color-white);
+    color: var(--color-bg);
+}
+
+/* Media Queries */
 @media screen and (max-width: 1024px) {
     .experience__container {
-        grid-template-columns: 1fr;
-    }
-
-    .experience__item {
-        padding: 2rem;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
     }
 }
 
-/*================media queries (small devices)===================*/
-
 @media screen and (max-width: 600px) {
-    .experience__item {
-        padding: 1rem;
+    .experience__container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
-
-    .experience__image {
-        max-width: 100%;
+    
+    .experience__item {
+        padding: 1.5rem;
     }
 }

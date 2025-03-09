@@ -1,26 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import './Nav.css';
-import { AiOutlineHome } from 'react-icons/ai';
-import { AiOutlineUser } from 'react-icons/ai';
-import { BiBook } from 'react-icons/bi';
-import { AiOutlineMessage } from 'react-icons/ai';
-import { IoMdCodeWorking } from "react-icons/io";
+import { AiOutlineHome, AiOutlineUser } from 'react-icons/ai';
+import { BiBook, BiMessageSquareDetail } from 'react-icons/bi';
+import { RiServiceLine } from 'react-icons/ri';
 
 const Nav = () => {
-  const [activenav, setActiveNav] = useState('#');
+  const [activeNav, setActiveNav] = useState('home');
 
   useEffect(() => {
-    const sections = document.querySelectorAll('section'); // بخش‌های صفحه که می‌خواهی تشخیص داده بشه
+    const sections = document.querySelectorAll('section');
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setActiveNav(`#${entry.target.id}`); // تغییر دادن activeNav وقتی بخشی در نمایه صفحه ظاهر میشه
+            setActiveNav(entry.target.id || 'home');
           }
         });
       },
-      { threshold: 0.5 } // حداقل 50% از بخش باید در صفحه باشد تا فعال شود
+      { threshold: 0.5 }
     );
 
     sections.forEach((section) => {
@@ -32,13 +30,49 @@ const Nav = () => {
     };
   }, []);
 
+  const scrollToTop = (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setActiveNav('home');
+  };
+
   return (
     <nav>
-      <a href='#' onClick={() => setActiveNav('#')} className={activenav === '#' ? 'active' : ''}><AiOutlineHome /></a>
-      <a href='#about' onClick={() => setActiveNav('#about')} className={activenav === '#about' ? 'active' : ''}><AiOutlineUser /></a>
-      <a href='#skill' onClick={() => setActiveNav('#skill')} className={activenav === '#skill' ? 'active' : ''}><BiBook /></a>
-      <a href='#Experience' onClick={() => setActiveNav('#Experience')} className={activenav === '#Experience' ? 'active' : ''}><IoMdCodeWorking /></a>
-      <a href='#contact' onClick={() => setActiveNav('#contact')} className={activenav === '#contact' ? 'active' : ''}><AiOutlineMessage /></a>
+      <button
+        onClick={scrollToTop}
+        className={activeNav === 'home' ? 'active' : ''}
+        aria-label="Scroll to top"
+      >
+        <AiOutlineHome />
+      </button>
+      <a
+        href="#about"
+        onClick={() => setActiveNav('about')}
+        className={activeNav === 'about' ? 'active' : ''}
+      >
+        <AiOutlineUser />
+      </a>
+      <a
+        href="#skill"
+        onClick={() => setActiveNav('skill')}
+        className={activeNav === 'skill' ? 'active' : ''}
+      >
+        <BiBook />
+      </a>
+      <a
+        href="#experience"
+        onClick={() => setActiveNav('experience')}
+        className={activeNav === 'experience' ? 'active' : ''}
+      >
+        <RiServiceLine />
+      </a>
+      <a
+        href="#contact"
+        onClick={() => setActiveNav('contact')}
+        className={activeNav === 'contact' ? 'active' : ''}
+      >
+        <BiMessageSquareDetail />
+      </a>
     </nav>
   );
 };

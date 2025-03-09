@@ -1,7 +1,6 @@
 nav {
     background: rgba(0, 0, 0, 0.3);
     width: max-content;
-    display: block;
     padding: 0.7rem 1.7rem;
     z-index: 2;
     position: fixed;
@@ -12,23 +11,44 @@ nav {
     gap: 0.8rem;
     border-radius: 3rem;
     backdrop-filter: blur(15px);
-  }
-  
-  nav a {
+}
+
+nav a,
+nav button {
     background: transparent;
     padding: 0.9rem;
     border-radius: 50%;
     display: flex;
     color: var(--color-light);
     font-size: 1.1rem;
-  }
-  
-  nav a:hover {
-    background: rgba(0, 0, 0, 0.2);
-  }
-  
-  nav a.active {
+    border: none;
+    cursor: pointer;
+    transition: all 400ms ease;
+}
+
+nav a:hover,
+nav button:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+nav a.active,
+nav button.active {
     background: var(--color-primary);
     color: var(--color-bg);
-  }
+}
+
+/* Media Queries */
+@media screen and (max-width: 600px) {
+    nav {
+        padding: 0.5rem 1.2rem;
+        bottom: 1rem;
+        gap: 0.5rem;
+    }
+
+    nav a,
+    nav button {
+        padding: 0.7rem;
+        font-size: 1rem;
+    }
+}
   
