@@ -58,8 +58,8 @@ const Contact = () => {
           <article className='contact__option'>
             <BsTelegram className='contact__option-icon' />
             <h4>Telegram</h4>
-            <h5>@Taha_rjt</h5>
-            <a href='https://t.me/Taha_rjt' target="_blank" rel="noopener noreferrer">
+            <h5>@Taha_rajati</h5>
+            <a href='https://t.me/Taha_rajati' target="_blank" rel="noopener noreferrer">
               Send a message
             </a>
           </article>

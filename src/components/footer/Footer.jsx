@@ -8,7 +8,7 @@ import {BsGithub} from 'react-icons/bs'
 const Footer = () => {
   return (
     <footer>
-      <a href='#' className='footer__logo'> TCARE  </a>
+      <a href='#' className='footer__logo'> Taha Rajati </a>
        <ul className='permalinks'>
         <li><a href='#' >Home</a> </li>
         <li><a href='#about' >About</a> </li>
@@ -24,7 +24,7 @@ const Footer = () => {
        </div>
 
        <div className="footer__copyright">
-        <small>TCARE . All rights resereved.</small>
+        <small>TAHA . All rights resereved.</small>
        </div>
     </footer>
   )

@@ -34,7 +34,7 @@ header {
 
 /* Profile Image Container */
 .me {
-    width: clamp(200px, 30vw, 300px);
+    width: clamp(100px, 10vw, 300px);
     aspect-ratio: 1;
     position: relative;
     margin: 2rem auto;
@@ -50,6 +50,7 @@ header {
     object-fit: cover;
     border-radius: 50%;
     transition: transform 0.3s ease;
+
 }
 
 .me:hover img {
