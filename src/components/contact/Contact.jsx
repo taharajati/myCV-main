@@ -15,10 +15,10 @@ const Contact = () => {
     setSubmitStatus({ type: '', message: '' });
 
     emailjs.sendForm(
-      'service_cfso63b',
-      'template_b324gcq',
+      'service_vtztxia',
+      'template_v8dyuvs',
       form.current,
-      'sqWL27msYvR6PUJS7'
+      'xYuxdTgMVrEY6NuR_'
     )
       .then((result) => {
         setSubmitStatus({
@@ -49,8 +49,8 @@ const Contact = () => {
           <article className='contact__option'>
             <AiOutlineMail className='contact__option-icon'/>
             <h4>Email</h4>
-            <h5>silent.taha.rjt@gmail.com</h5>
-            <a href='mailto:silent.taha.rjt@gmail.com' target="_blank" rel="noopener noreferrer">
+            <h5>taharjt.developer@gmail.com</h5>
+            <a href='mailto:taharjt.developer@gmail.com' target="_blank" rel="noopener noreferrer">
               Send a message
             </a>
           </article>
