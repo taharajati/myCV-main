@@ -9,6 +9,8 @@ import IMG3 from '../../assets/3.png';
 import IMG4 from '../../assets/4.png';
 
 import IMG5 from '../../assets/5.png';
+import IMG6 from '../../assets/6.png';
+
 
 const Projects = () => {
   const [expandedProject, setExpandedProject] = useState(null);
@@ -53,7 +55,7 @@ const Projects = () => {
     {
       title: "Todo App",
       description: "Advanced task management application with React.js",
-      image: IMG4,
+      image: IMG6,
       details: [
         "Development of an advanced task management application with React.js",
         "Task categorization, prioritization, subtasks, and time tracking",
