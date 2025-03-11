@@ -11,7 +11,7 @@ import './responsive.css';
 const Header = lazy(() => import('./components/header/Header'));
 const About = lazy(() => import('./components/about/About'));
 const Skill = lazy(() => import('./components/skill/Skill'));
-const Experience = lazy(() => import('./components/experience/Experience'));
+const Projects = lazy(() => import('./components/projects/Projects'));
 const Contact = lazy(() => import('./components/contact/Contact'));
 const Footer = lazy(() => import('./components/footer/Footer'));
 
@@ -26,12 +26,22 @@ const App = () => {
 
       <ErrorBoundary>
         <Suspense fallback={<Loading />}>
-          <Header />
+          <section id="home">
+            <Header />
+          </section>
           <Nav />
-          <About />
-          <Skill />
-          <Experience />
-          <Contact />
+          <section id="about">
+            <About />
+          </section>
+          <section id="skill">
+            <Skill />
+          </section>
+          <section id="projects">
+            <Projects />
+          </section>
+          <section id="contact">
+            <Contact />
+          </section>
           <Footer />
         </Suspense>
       </ErrorBoundary>

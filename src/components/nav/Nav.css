@@ -1,5 +1,5 @@
 nav {
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.2);
     width: max-content;
     padding: 0.7rem 1.7rem;
     z-index: 2;
@@ -11,6 +11,9 @@ nav {
     gap: 0.8rem;
     border-radius: 3rem;
     backdrop-filter: blur(15px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: slideUp 0.5s ease;
 }
 
 nav a,
@@ -24,11 +27,13 @@ nav button {
     border: none;
     cursor: pointer;
     transition: all 400ms ease;
+    position: relative;
 }
 
 nav a:hover,
 nav button:hover {
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
 }
 
 nav a.active,
@@ -37,7 +42,45 @@ nav button.active {
     color: var(--color-bg);
 }
 
+nav a.active::before,
+nav button.active::before {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: var(--color-primary);
+    border-radius: 50%;
+    bottom: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 20px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
 /* Media Queries */
+@media screen and (max-width: 1024px) {
+    nav {
+        padding: 0.6rem 1.5rem;
+        bottom: 1.5rem;
+        gap: 0.6rem;
+    }
+
+    nav a,
+    nav button {
+        padding: 0.8rem;
+        font-size: 1.05rem;
+    }
+}
+
 @media screen and (max-width: 600px) {
     nav {
         padding: 0.5rem 1.2rem;
@@ -49,6 +92,13 @@ nav button.active {
     nav button {
         padding: 0.7rem;
         font-size: 1rem;
+    }
+
+    nav a.active::before,
+    nav button.active::before {
+        width: 4px;
+        height: 4px;
+        bottom: -0.3rem;
     }
 }
   

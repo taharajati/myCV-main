@@ -9,16 +9,21 @@ const Nav = () => {
 
   useEffect(() => {
     const sections = document.querySelectorAll('section');
+    let currentSection = '';
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setActiveNav(entry.target.id || 'home');
+            currentSection = entry.target.id;
+            setActiveNav(currentSection || 'home');
           }
         });
       },
-      { threshold: 0.5 }
+      { 
+        threshold: 0.2,
+        rootMargin: '-50% 0px -50% 0px'
+      }
     );
 
     sections.forEach((section) => {
@@ -60,9 +65,9 @@ const Nav = () => {
         <BiBook />
       </a>
       <a
-        href="#experience"
-        onClick={() => setActiveNav('experience')}
-        className={activeNav === 'experience' ? 'active' : ''}
+        href="#projects"
+        onClick={() => setActiveNav('projects')}
+        className={activeNav === 'projects' ? 'active' : ''}
       >
         <RiServiceLine />
       </a>
